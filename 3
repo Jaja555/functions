@@ -1,0 +1,8 @@
+def sorting_cheeses(**kwargs):
+    sorted_data = sorted(kwargs.items(), key=lambda kvp: (-len(kvp[1]), kvp[0]))
+    result = []
+    for cheese_name, pieces in sorted_data:
+        result.append(cheese_name)
+        for piece in sorted(pieces, reverse=True):
+            result.append(str(piece))
+    return "\n".join(result)
